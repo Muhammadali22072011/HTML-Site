@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс Компьютерной Грамотности + ChatGPT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Outfit','ui-sans-serif','system-ui'] },
+            colors: { primary: { 600: '#2563eb', 700:'#1d4ed8' } }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans text-neutral-900 antialiased bg-white">
+    <!-- Навигация -->
+    <nav class="navbar sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-neutral-200">
+        <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="nav-logo flex items-center gap-2 text-primary-600 text-xl font-semibold">
+                <i class="fas fa-graduation-cap"></i>
+                <span>ЦифроГрад</span>
+            </div>
+            <ul class="nav-menu hidden md:flex items-center gap-6 text-sm">
+                <li class="nav-item"><a href="#hero" class="nav-link hover:text-primary-700">Главная</a></li>
+                <li class="nav-item"><a href="#elementary" class="nav-link hover:text-primary-700">Начальная школа</a></li>
+                <li class="nav-item"><a href="#middle" class="nav-link hover:text-primary-700">Средняя школа</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link hover:text-primary-700">О курсе</a></li>
+            </ul>
+            <div class="hamburger md:hidden flex flex-col gap-1 cursor-pointer">
+                <span class="bar h-0.5 w-6 bg-neutral-900"></span>
+                <span class="bar h-0.5 w-6 bg-neutral-900"></span>
+                <span class="bar h-0.5 w-6 bg-neutral-900"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный баннер -->
+    <section id="hero" class="hero bg-gradient-to-b from-neutral-50 to-white py-16 sm:py-20 lg:py-28">
+        <div class="hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div class="hero-content">
+                <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">Компьютерная грамотность + ChatGPT</h1>
+                <p class="hero-subtitle mt-3 text-neutral-700 text-base sm:text-lg">Современный курс цифровых навыков для детей</p>
+                <div class="hero-stats mt-5 flex flex-wrap gap-4 text-neutral-600">
+                    <div class="stat inline-flex items-center gap-2"><i class="fas fa-clock text-primary-600"></i><span>36 уроков по 60 минут</span></div>
+                    <div class="stat inline-flex items-center gap-2"><i class="fas fa-calendar text-primary-600"></i><span>12 недель</span></div>
+                    <div class="stat inline-flex items-center gap-2"><i class="fas fa-robot text-primary-600"></i><span>+ ChatGPT</span></div>
+                    <div class="stat inline-flex items-center gap-2"><i class="fas fa-images text-primary-600"></i><span>+ Видео и картинки</span></div>
+                </div>
+                <button class="cta-button mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary-600 text-white hover:bg-primary-700 shadow" onclick="scrollToSection('elementary')">
+                    Начать обучение
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-visual flex justify-center">
+                <div class="computer-illustration relative">
+                    <div class="monitor rounded-t-lg bg-neutral-900 w-[220px] h-[150px] mx-auto mb-2">
+                        <div class="screen rounded bg-primary-600 w-[200px] h-[130px] mx-auto mt-2 overflow-hidden">
+                            <div class="code-lines p-4">
+                                <div class="line h-2 rounded bg-white/80 mb-2"></div>
+                                <div class="line short h-2 rounded bg-white/80 mb-2 w-3/5"></div>
+                                <div class="line h-2 rounded bg-white/80 mb-2"></div>
+                                <div class="line medium h-2 rounded bg-white/80 w-4/5"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="keyboard w-[240px] h-5 bg-neutral-200 rounded mx-auto mb-2"></div>
+                    <div class="mouse w-8 h-10 bg-neutral-200 rounded-[12px] ml-auto mr-6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Начальная школа -->
+    <section id="elementary" class="course-section py-16 sm:py-20 bg-neutral-50">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header text-center mb-10">
+                <h2 class="section-title text-2xl sm:text-3xl font-semibold">Начальная школа (2-4 классы)</h2>
+                <p class="section-description mt-2 text-neutral-600">Игровое освоение базовых цифровых навыков и безопасное знакомство с ChatGPT</p>
+            </div>
+
+            <!-- Блок 1: Основы компьютера (1-6 уроки) -->
+            <div class="lessons-block mb-12">
+                <h3 class="block-title flex items-center gap-3 text-xl font-semibold px-2 mb-6">
+                    <i class="fas fa-desktop text-primary-600 text-2xl"></i>
+                    Блок 1: Компьютер и основы работы (уроки 1-6)
+                </h3>
+                <div class="lessons-grid grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Урок 1 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(1)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">01</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Что такое компьютер?</h4>
+                            <p class="text-neutral-600">Изучаем части компьютера: монитор, клавиатура, мышь</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Основы</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">60 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-play lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 2 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(2)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">02</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Работа с мышью</h4>
+                            <p class="text-neutral-600">Один клик, двойной клик, перетаскивание. Игры-тренажёры</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Практика</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">60 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-mouse lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 3 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(3)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">03</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Знакомство с клавиатурой</h4>
+                            <p class="text-neutral-600">Буквы, цифры, пробел, Enter. Игра «напечатай слово»</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Игра</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-keyboard lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 4 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(4)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">04</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Печатаем предложения</h4>
+                            <p class="text-neutral-600">Учимся печатать о себе. Правило: один пробел между словами</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Письмо</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-pencil-alt lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 5 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(5)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">05</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Файлы и папки</h4>
+                            <p class="text-neutral-600">Создаём и сохраняем файл. Что такое папка и порядок</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Организация</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-folder lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 6 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(6)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">06</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Безопасность за компьютером</h4>
+                            <p class="text-neutral-600">Правильная посадка, расстояние до экрана, перерывы</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Здоровье</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-shield-alt lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+                </div>
+            <!-- Блок 2: Текст и ChatGPT (7-12 уроки) -->
+            <div class="lessons-block mt-12">
+                <h3 class="block-title flex items-center gap-3 text-xl font-semibold px-2 mb-6">
+                    <i class="fas fa-robot text-primary-600 text-2xl"></i>
+                    Блок 2: Текст и ChatGPT (уроки 7-12)
+                </h3>
+                <div class="lessons-grid grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Урок 7 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(7)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">07</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Текстовый редактор</h4>
+                            <p class="text-neutral-600">Word/Google Docs. Печатаем короткий рассказ из 3-5 предложений</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Word</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-file-alt lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 8 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(8)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">08</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Форматирование текста</h4>
+                            <p class="text-neutral-600">Шрифт, размер, жирный, курсив, выравнивание</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Дизайн</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-font lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 9 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(9)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">09</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Знакомство с ChatGPT</h4>
+                            <p class="text-neutral-600">Что такое ChatGPT? Просим идеи для сказки и три загадки</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">ИИ</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-comments lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 10 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(10)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">10</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Игра «Вопрос-ответ»</h4>
+                            <p class="text-neutral-600">Играем с ChatGPT. Учимся задавать понятные вопросы</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Игра</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-question-circle lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 11 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(11)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">11</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Сказка с ChatGPT</h4>
+                            <p class="text-neutral-600">Пишем сказку вместе с ChatGPT. Уточняем героев и места</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Творчество</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-magic lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+
+                    <!-- Урок 12 -->
+                    <div class="lesson-card bg-white border border-neutral-200 rounded-xl p-5 shadow-sm hover:shadow-md transition cursor-pointer flex gap-4 items-center" onclick="openLessonModal(12)">
+                        <div class="lesson-number text-2xl font-bold text-primary-600 min-w-[3rem] text-center">12</div>
+                        <div class="lesson-content">
+                            <h4 class="text-lg font-semibold">Правила общения с ИИ</h4>
+                            <p class="text-neutral-600">Что можно и нельзя спрашивать. Вежливость и безопасность</p>
+                            <div class="lesson-tags mt-2 flex gap-2 text-xs">
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">Этика</span>
+                                <span class="tag border border-neutral-200 rounded-full px-3 py-1 bg-neutral-50 text-neutral-600">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-handshake lesson-icon text-primary-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок 3: Интернет и картинки (13-18 уроки) -->
+            <div class="lessons-block">
+                <h3 class="block-title">
+                    <i class="fas fa-globe"></i>
+                    Блок 3: Интернет и картинки (уроки 13-18)
+                </h3>
+                <div class="lessons-grid">
+                    <!-- Уроки 13-18 -->
+                    <div class="lesson-card" onclick="openLessonModal(13)">
+                        <div class="lesson-number">13</div>
+                        <div class="lesson-content">
+                            <h4>Что такое Интернет?</h4>
+                            <p>Простыми словами. Примеры полезных детских сайтов</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Интернет</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-wifi lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(14)">
+                        <div class="lesson-number">14</div>
+                        <div class="lesson-content">
+                            <h4>Безопасность в сети</h4>
+                            <p>Правила безопасности: не делимся личными данными</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Безопасность</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-lock lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(15)">
+                        <div class="lesson-number">15</div>
+                        <div class="lesson-content">
+                            <h4>Поиск в интернете</h4>
+                            <p>Ищем картинки и информацию с учителем. Читаем подсказки</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Поиск</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-search lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(16)">
+                        <div class="lesson-number">16</div>
+                        <div class="lesson-content">
+                            <h4>Рисуем в Paint</h4>
+                            <p>Рисуем героя в Paint. Сохраняем файл в папку «Проект»</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Рисование</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-palette lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(17)">
+                        <div class="lesson-number">17</div>
+                        <div class="lesson-content">
+                            <h4>Создаём постер</h4>
+                            <p>Делаем постер «Мой любимый мультгерой»</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Проект</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-image lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(18)">
+                        <div class="lesson-number">18</div>
+                        <div class="lesson-content">
+                            <h4>ChatGPT помогает описать</h4>
+                            <p>ChatGPT помогает придумать описание к картинке</p>
+                            <div class="lesson-tags">
+                                <span class="tag">ИИ+Арт</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-comment-dots lesson-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок 4: Проекты и общение (19-30 уроки) -->
+            <div class="lessons-block">
+                <h3 class="block-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Блок 4: Электронное общение и проекты (уроки 19-30)
+                </h3>
+                <div class="lessons-grid">
+                    <!-- Уроки 19-30 (показываю первые 6, остальные по аналогии) -->
+                    <div class="lesson-card" onclick="openLessonModal(19)">
+                        <div class="lesson-number">19</div>
+                        <div class="lesson-content">
+                            <h4>Электронная почта</h4>
+                            <p>Пишем письмо другу. Тема, приветствие, подпись</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Email</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-envelope lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(20)">
+                        <div class="lesson-number">20</div>
+                        <div class="lesson-content">
+                            <h4>Сетевой этикет</h4>
+                            <p>Как писать вежливо и понятно в интернете</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Этикет</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-heart lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(21)">
+                        <div class="lesson-number">21</div>
+                        <div class="lesson-content">
+                            <h4>Основы презентаций</h4>
+                            <p>PowerPoint/Canva: что должно быть на слайдах</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Презентации</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-presentation lesson-icon"></i>
+                    </div>
+
+                    <!-- Добавляю остальные уроки 22-30 -->
+                    <div class="lesson-card" onclick="openLessonModal(22)">
+                        <div class="lesson-number">22</div>
+                        <div class="lesson-content">
+                            <h4>Создаём слайды</h4>
+                            <p>Заголовки, картинки, простые переходы</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Слайды</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-images lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(23)">
+                        <div class="lesson-number">23</div>
+                        <div class="lesson-content">
+                            <h4>Проект «Мой день»</h4>
+                            <p>Создаём презентацию из 5-7 слайдов о своём дне</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Проект</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-clock lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(24)">
+                        <div class="lesson-number">24</div>
+                        <div class="lesson-content">
+                            <h4>ChatGPT для слайдов</h4>
+                            <p>ChatGPT предлагает текст для слайдов</p>
+                            <div class="lesson-tags">
+                                <span class="tag">ИИ</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-robot lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(25)">
+                        <div class="lesson-number">25</div>
+                        <div class="lesson-content">
+                            <h4>Проект «Любимая книга»</h4>
+                            <p>Мини-проект: текст + картинка о любимой книге</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Книги</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-book lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(26)">
+                        <div class="lesson-number">26</div>
+                        <div class="lesson-content">
+                            <h4>Работа в парах</h4>
+                            <p>Обмениваемся проектами, даём обратную связь</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Команда</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-users lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(27)">
+                        <div class="lesson-number">27</div>
+                        <div class="lesson-content">
+                            <h4>ChatGPT как редактор</h4>
+                            <p>Просим ChatGPT улучшить наш текст</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Редактор</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-edit lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(28)">
+                        <div class="lesson-number">28</div>
+                        <div class="lesson-content">
+                            <h4>Игра «Умный вопрос»</h4>
+                            <p>Соревнуемся: кто задаст самый умный вопрос ChatGPT</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Игра</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-lightbulb lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(29)">
+                        <div class="lesson-number">29</div>
+                        <div class="lesson-content">
+                            <h4>ChatGPT и загадки</h4>
+                            <p>ChatGPT придумывает загадки, мы их проверяем</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Загадки</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-puzzle-piece lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(30)">
+                        <div class="lesson-number">30</div>
+                        <div class="lesson-content">
+                            <h4>Мини-сценарий</h4>
+                            <p>Создаём сценарий для игры или инсценировки</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Театр</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-theater-masks lesson-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок 5: Итоговый проект (31-36 уроки) -->
+            <div class="lessons-block">
+                <h3 class="block-title">
+                    <i class="fas fa-trophy"></i>
+                    Блок 5: Итоговый проект (уроки 31-36)
+                </h3>
+                <div class="lessons-grid">
+                    <div class="lesson-card" onclick="openLessonModal(31)">
+                        <div class="lesson-number">31</div>
+                        <div class="lesson-content">
+                            <h4>Планируем книгу</h4>
+                            <p>Выбираем тему, разделы, планируем картинки</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Планирование</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-map lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(32)">
+                        <div class="lesson-number">32</div>
+                        <div class="lesson-content">
+                            <h4>Пишем текст</h4>
+                            <p>Создаём содержание книги с помощью ChatGPT</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Писательство</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-feather-alt lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(33)">
+                        <div class="lesson-number">33</div>
+                        <div class="lesson-content">
+                            <h4>Рисуем иллюстрации</h4>
+                            <p>Создаём картинки в Paint или Canva</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Иллюстрации</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-paint-brush lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(34)">
+                        <div class="lesson-number">34</div>
+                        <div class="lesson-content">
+                            <h4>Собираем книгу</h4>
+                            <p>Объединяем всё в Word/PDF. Делаем обложку и содержание</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Сборка</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-book-open lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(35)">
+                        <div class="lesson-number">35</div>
+                        <div class="lesson-content">
+                            <h4>Репетиция защиты</h4>
+                            <p>Готовимся рассказать о своей книге</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Подготовка</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-microphone lesson-icon"></i>
+                    </div>
+
+                    <div class="lesson-card" onclick="openLessonModal(36)">
+                        <div class="lesson-number">36</div>
+                        <div class="lesson-content">
+                            <h4>Защита проекта</h4>
+                            <p>Презентуем «Мою первую цифровую книгу»</p>
+                            <div class="lesson-tags">
+                                <span class="tag">Финал</span>
+                                <span class="tag">30 мин</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-star lesson-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Средняя школа -->
+    <section id="middle" class="course-section middle-school py-16 sm:py-20">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header text-center mb-10">
+                <h2 class="section-title text-2xl sm:text-3xl font-semibold">Средняя школа (5-8 классы)</h2>
+                <p class="section-description mt-2 text-neutral-600">Уверенная работа с компьютером, Интернетом и ChatGPT как инструментом учёбы</p>
+            </div>
+            
+            <div class="coming-soon text-center text-neutral-600 border border-dashed border-neutral-300 rounded-xl p-10">
+                <i class="fas fa-cogs text-primary-600 text-3xl"></i>
+                <h3 class="text-xl font-semibold mt-3">Раздел в разработке</h3>
+                <p class="mt-1">Подробные уроки для средней школы будут добавлены в ближайшее время</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- О курсе -->
+    <section id="about" class="about-section py-16 sm:py-20 bg-neutral-50">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="about-content">
+                <h2 class="text-2xl sm:text-3xl font-semibold mb-6">О курсе</h2>
+                <div class="about-grid grid gap-6 md:grid-cols-3">
+                    <div class="about-item border border-neutral-200 rounded-xl p-6 bg-white">
+                        <i class="fas fa-target text-primary-600 text-2xl"></i>
+                        <h3 class="text-lg font-semibold mt-3">Цель</h3>
+                        <p class="text-neutral-600 mt-1">Подготовить детей к цифровому будущему через освоение базовых компьютерных навыков и безопасное знакомство с ИИ</p>
+                    </div>
+                    <div class="about-item border border-neutral-200 rounded-xl p-6 bg-white">
+                        <i class="fas fa-gamepad text-primary-600 text-2xl"></i>
+                        <h3 class="text-lg font-semibold mt-3">Подход</h3>
+                        <p class="text-neutral-600 mt-1">Игровое обучение, практические задания, творческие проекты и работа в парах</p>
+                    </div>
+                    <div class="about-item border border-neutral-200 rounded-xl p-6 bg-white">
+                        <i class="fas fa-certificate text-primary-600 text-2xl"></i>
+                        <h3 class="text-lg font-semibold mt-3">Результат</h3>
+                        <p class="text-neutral-600 mt-1">Уверенные пользователи компьютера, умеющие безопасно работать с ChatGPT и создавать цифровые проекты</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для уроков -->
+    <div id="lessonModal" class="modal fixed inset-0 hidden items-center justify-center">
+        <div class="modal-content bg-white rounded-xl shadow-xl w-[90%] max-w-3xl max-h-[80vh] overflow-y-auto p-6">
+            <span class="close text-neutral-500 text-2xl cursor-pointer float-right" onclick="closeLessonModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer border-t border-neutral-200 py-8">
+        <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-neutral-600 text-center">
+            <p>&copy; 2024 ЦифроГрад. Курс компьютерной грамотности для детей</p>
+            <div class="mt-2">
+                <span>
+                    Сайт и курс создал 
+                    <a 
+                        href="https://muhammmadali-blog.vercel.app/" 
+                        target="_blank" 
+                        rel="noopener" 
+                        class="font-bold text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-400 px-2 py-1 rounded shadow hover:from-blue-600 hover:to-blue-500 transition"
+                        style="font-size:1.15em; letter-spacing:0.5px;"
+                    >Мухаммадали</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+</html>
+
+
